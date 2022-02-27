@@ -6,9 +6,26 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Mail;
-// use Illuminate\Notifications\Notifiable;
-// use App\Notifications\TelegramNotification;
-ini_set('max_execution_time', '600'); //300 seconds = 5 minutes
+ini_set('max_execution_time', '0'); //Infinity
+
+function log_and_dump($status,$value) {
+    if ($status == "info") {
+        Log::info($value);
+    } elseif ($status == "emergency"){
+        Log::emergency($value);
+    }elseif ($status == "critical"){
+        Log::critical($value);
+    }elseif ($status == "error"){
+        Log::error($value);
+    }elseif ($status == "warning"){
+        Log::warning($value);
+    }elseif ($status == "notice"){
+        Log::notice($value);
+    }elseif ($status == "debug"){
+        Log::debug($value);
+    }
+    dump($value);
+}
 
 function last_transaction($last_trans_secs, $successful_secs)
 {

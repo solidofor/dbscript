@@ -11,14 +11,14 @@ class daily_available_amount extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'daily_available_amount';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'daily_available_amount';
 
     /**
      * Create a new command instance.

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class available_amount_first_run extends Command
 {
@@ -11,14 +12,14 @@ class available_amount_first_run extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'available_amount_first_run';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'available_amount_first_run';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,11 @@ class available_amount_first_run extends Command
      */
     public function handle()
     {
-        return 0;
+        try {
+            log_and_dump('info','here');
+        } catch (\Throwable $th) {
+            log_and_dump('error',$th);
+            throw $th;
+        }
     }
 }
