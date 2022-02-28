@@ -19,13 +19,15 @@ class Kernel extends ConsoleKernel
 
     /**
      * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('daily_available_amount')->dailyAt('01:30')->withoutOverlapping(30);
+        $schedule->command('daily_available_amount')->dailyAt('01:00')->withoutOverlapping(30);
+        $schedule->command('daily_available_amount')->dailyAt('02:00')->withoutOverlapping(30);
+        $schedule->command('daily_available_amount')->dailyAt('03:00')->withoutOverlapping(30);
+        $schedule->command('daily_available_amount')->dailyAt('04:00')->withoutOverlapping(30);
+        $schedule->command('daily_available_amount')->dailyAt('05:00')->withoutOverlapping(30);
     }
 
     /**

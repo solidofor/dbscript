@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Mail;
 ini_set('max_execution_time', '0'); //Infinity
 
 function log_and_dump($status,$value) {
-    if ($status == "info") {
+    if($status == "info") {
         Log::info($value);
-    } elseif ($status == "emergency"){
+    }elseif ($status == "emergency"){
         Log::emergency($value);
     }elseif ($status == "critical"){
         Log::critical($value);

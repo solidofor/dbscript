@@ -15,9 +15,11 @@ class CreateAvailableAmountsTable extends Migration
     {
         Schema::create('available_amounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('clientid');
-            $table->bigInteger('amount');
-            $table->date('date');
+            $table->string('clientid')->index('clientid');
+            $table->bigInteger('total_amount');
+            $table->bigInteger('fee_amount');
+            $table->bigInteger('merchant_amount');
+            $table->date('date')->index('date');
             $table->timestamps();
         });
     }

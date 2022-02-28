@@ -42,7 +42,7 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
-        
+
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
@@ -63,6 +63,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
             ]) : [],
         ],
+
         'mysql2' => [
             'driver'    => env('DB_CONNECTION_SECOND'),
             'host'      => env('DB_HOST_SECOND'),
